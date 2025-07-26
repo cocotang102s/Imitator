@@ -17,7 +17,7 @@ fi
 
 echo "Installing conda packages"
 echo "Installing pytorch"
-conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=10.2 -c pytorch
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
 
 conda env update -n $env_name --file environment.yml
 pip install smplx
