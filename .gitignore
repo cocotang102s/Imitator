@@ -146,3 +146,5 @@ pretrained_model.zip
 assets/run_on_external_audio_3diface.py
 imitator/test/test_model_external_audio_3diface.py
 imitator/test/test_model_external_audio_with_sampling.py
+assets/demo
+voice_output.zip

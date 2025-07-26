@@ -61,12 +61,20 @@ def read_data(
     if os.getenv("VOCASET_PATH"):
         audio_path = os.path.join(os.getenv("VOCASET_PATH"), wav_path)
         vertices_path = os.path.join(os.getenv("VOCASET_PATH"), vertices_path)
-        processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")
+        # processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")
+        processor = Wav2Vec2Processor.from_pretrained(
+        os.environ["WAV2VEC_PATH"]  # 或者直接硬编码路径
+        # "/home/tang20/Codes/FacialGeneration/wav2vec2-base-960h"
+        )
         template_file = os.path.join(os.getenv("VOCASET_PATH"), template_file)
     else:
         audio_path = os.path.join(os.getenv("HOME"), dataset_root, wav_path)
         vertices_path = os.path.join(os.getenv("HOME"), dataset_root, vertices_path)
-        processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")
+        # processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")
+        processor = Wav2Vec2Processor.from_pretrained(
+        os.environ["WAV2VEC_PATH"]  # 或者直接硬编码路径
+        # "/home/tang20/Codes/FacialGeneration/wav2vec2-base-960h"
+        )
         template_file = os.path.join(os.getenv("HOME"), dataset_root, template_file)
 
     with open(template_file, 'rb') as fin:

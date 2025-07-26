@@ -70,7 +70,11 @@ def read_data(
         wav2vec_path = "facebook/wav2vec2-base-960h"
     else:
         print("using local processor")
-    processor = Wav2Vec2Processor.from_pretrained(wav2vec_path)
+    # processor = Wav2Vec2Processor.from_pretrained(wav2vec_path)
+    processor = Wav2Vec2Processor.from_pretrained(
+    os.environ["WAV2VEC_PATH"]  # 或者直接硬编码路径
+    # "/home/tang20/Codes/FacialGeneration/wav2vec2-base-960h"
+    )
 
     template_file = os.path.join(os.getenv("HOME"), dataset_root, template_file)
     with open(template_file, 'rb') as fin:
